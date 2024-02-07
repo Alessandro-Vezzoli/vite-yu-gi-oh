@@ -1,10 +1,11 @@
 <template>
   <div class="col-12 col-sm-6 col-lg-4">
     <div class="card">
-      <img :src="card.img" alt="" />
+      <img :src="card.card_images[0].image_url" alt="" />
       <div>
-        {{ card.name }}
-        {{ card.type }}
+        {{ card.name }}<br />
+        {{ card.type }}<br />
+        {{ card.archetype }}
       </div>
     </div>
   </div>

@@ -6,11 +6,10 @@
         <option value="alien">Alien</option>
       </select>
     </div>
-    {{ cardItems.name }}
     <CardItems
       v-for="card in cardItems"
       :key="card.id + '_card'"
-      :card="cardItems"
+      :card="card"
     ></CardItems>
   </div>
 </template>
@@ -34,7 +33,6 @@ export default {
       .get(this.url_api)
       .then((res) => {
         this.cardItems = res.data.data;
-
         console.log(this.cardItems);
       })
       .catch((error) => {
