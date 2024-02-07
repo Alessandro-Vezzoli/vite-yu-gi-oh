@@ -6,11 +6,20 @@
         <option value="alien">Alien</option>
       </select>
     </div>
-    <CardItems
-      v-for="card in cardItems"
-      :key="card.id + '_card'"
-      :card="card"
-    ></CardItems>
+
+    <div class="background-white">
+      <div class="background-black">
+        <p class="text-total">Found {{ cardItems.length }} cards</p>
+      </div>
+
+      <div class="card-grid">
+        <CardItems
+          v-for="card in cardItems"
+          :key="card.id + '_card'"
+          :card="card"
+        ></CardItems>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -42,4 +51,27 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.filters {
+  padding: 10px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.background-white {
+  padding: 50px;
+  background-color: white;
+}
+.background-black {
+  background-color: black;
+  height: 50px;
+}
+.text-total {
+  color: white;
+  align-content: center;
+  padding: 20px;
+}
+</style>

@@ -1,15 +1,12 @@
 <template>
-  <div class="col-12 col-sm-6 col-lg-4">
-    <div class="card">
-      <img :src="card.card_images[0].image_url" alt="" />
-      <div>
-        {{ card.name }}<br />
-        {{ card.type }}<br />
-        {{ card.archetype }}
-      </div>
+  <div class="card">
+    <img :src="card.card_images[0].image_url" alt="" />
+    <div class="description">
+      <h3 class="name">{{ card.name }}</h3>
+      <br />
+      <p class="type">{{ card.archetype || card.type }}</p>
     </div>
   </div>
-  <!-- /.col-12 col-sm-6 col-md-3 -->
 </template>
 
 <script>
@@ -25,6 +22,9 @@ export default {
 .card {
   background-color: white;
   transition: all 1s;
+  height: 550px;
+  background-color: orange;
+  padding-bottom: 10px;
 
   &:hover {
     filter: drop-shadow(0 0 15px #507183);
@@ -39,5 +39,18 @@ export default {
   > div {
     padding: 1rem;
   }
+}
+.description {
+  background-color: orange;
+}
+.name {
+  color: white;
+  text-align: center;
+}
+.type {
+  text-align: center;
+}
+.background-black {
+  background-color: black;
 }
 </style>
